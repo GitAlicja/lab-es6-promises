@@ -8,24 +8,92 @@ for (let i = 0; i < mashPotatoes.length; i++) {
 
 // Iteration 1 using callbacks
 addFood(steak[0], '#steak', () => {
-  // ... your code here
+
   addFood(steak[1], '#steak', () => {
 
-  })
+    addFood(steak[2], '#steak', () => {
+
+      addFood(steak[3], '#steak', () => {
+
+        addFood(steak[4], '#steak', () => {
+
+          addFood(steak[5], '#steak', () => {
+
+            addFood(steak[6], '#steak', () => {
+
+              addFood(steak[7], '#steak', () => {
+
+              });
+            });
+          });
+        });
+      });
+    });
+  });
 });
 
 
 
 // Iteration 2 using `.then()`
 addFood(mashPotatoes[0], '#mashPotatoes').then(() => {
-  // ... your code here
-  addFood(mashPotatoes[1], '#mashPotatoes')
+  return addFood(mashPotatoes[1], '#mashPotatoes');
+}).then(() => {
+  return addFood(mashPotatoes[2], '#mashPotatoes');
+}).then(() => {
+  return addFood(mashPotatoes[3], '#mashPotatoes');
+}).then(() => {
+  return addFood(mashPotatoes[4], '#mashPotatoes');
 });
+
+
+
+/*
+you could solve this using variables but it's not needed
+
+addFood(mashPotatoes[0], '#mashPotatoes').then(() => {
+  let recipeStep2 = mashPotatoes[1];
+  return addFood(recipeStep2, '#mashPotatoes');
+}).then(() => {
+  let recipeStep3 = mashPotatoes[2];
+  return addFood(recipeStep3, '#mashPotatoes');
+}).then(() => {
+  let recipeStep4 = mashPotatoes[3];
+  return addFood(recipeStep4, '#mashPotatoes');
+}).then(() => {
+  let recipeStep5 = mashPotatoes[4];
+  return addFood(recipeStep5, '#mashPotatoes');
+});
+*/
+
+/*
+it's working but it's structured like a callback function
+addFood(mashPotatoes[0], '#mashPotatoes').then(() => {
+  addFood(mashPotatoes[1], '#mashPotatoes').then(() => {
+    addFood(mashPotatoes[2], '#mashPotatoes').then(() => {
+      addFood(mashPotatoes[3], '#mashPotatoes').then(() => {
+        addFood(mashPotatoes[4], '#mashPotatoes')
+      });
+    });
+  });
+});
+*/
+
 
 // Iteration 3 using async and await
 
-  async function makeFood(step) {
-    // ... your code here
-    
-  }
-  makeFood(eachStep);
+async function makeFood(steps) {
+  
+  await addFood(steps[0], "#brusselSprouts");
+  await addFood(steps[1], "#brusselSprouts");
+  await addFood(steps[2], "#brusselSprouts");
+  await addFood(steps[3], "#brusselSprouts");
+  await addFood(steps[4], "#brusselSprouts");
+  await addFood(steps[5], "#brusselSprouts");
+  await addFood(steps[6], "#brusselSprouts");
+  await addFood(steps[7], "#brusselSprouts");
+  await addFood(steps[8], "#brusselSprouts");
+
+}
+makeFood(brusselSprouts);
+
+
